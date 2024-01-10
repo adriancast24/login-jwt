@@ -50,7 +50,7 @@ class MyHome extends StatelessWidget {
             var jwt = await authController.loginUser();
             var res = get();
             if(jwt != null){
-              storage.write(key: "jwt", value: jwt);
+              print(ValueKey("mira $jwt"));
 
 
             }
