@@ -9,17 +9,43 @@ final storage = FlutterSecureStorage();
 
 void main() {
   runApp(
-    MaterialApp(home: MyHome()),
+    MaterialApp(home: MyApp()),
   );
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Demo',
+
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: true,
+      ),
+      home: MyHome(),
+    );
+  }
+}
+
+
+
 class MyHome extends StatelessWidget {
-  Object? get tok => null;
+
 
   @override
   Widget build(BuildContext context) {
     AuthController authController = AuthController() ;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
+        title: Text('login', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+
+        ),
+
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -55,7 +81,7 @@ class MyHome extends StatelessWidget {
             if(jwt != null){
 
               Map<String, dynamic> tooken = jsonDecode(jwt);
-              print(tok);
+              //print(tok);
 
               tooken.forEach((key, value){
                 final tok = value;
