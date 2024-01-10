@@ -42,7 +42,6 @@ class AuthController{
       print(loginarr);
       return (response.body);
 
-
     }else {
       print(response.statusCode);
 
@@ -53,7 +52,7 @@ class AuthController{
 Future get() async {
   var jwt = await storage.read(key: "jwt");
 
-  print("hola $jwt");
+
 
   //token.forEach((key, value) =>print("$key=>${value.runtimeType.toString}"));
 
