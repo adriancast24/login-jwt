@@ -44,7 +44,7 @@ class MyHome extends StatelessWidget {
       appBar: AppBar(
 
         backgroundColor: Colors.blueAccent,
-        title: Text('login', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        title: Text('', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
 
         ),
 
@@ -71,7 +71,7 @@ class MyHome extends StatelessWidget {
             child: TextFormField(
               obscureText: true,
               controller: authController.password_controller,
-              decoration: InputDecoration(hintText: "password",
+              decoration: InputDecoration(hintText: "Password",
                 enabledBorder: OutlineInputBorder(),
                 focusedBorder: OutlineInputBorder(),
               ),
@@ -91,7 +91,7 @@ class MyHome extends StatelessWidget {
                 context,
               MaterialPageRoute(builder: (context)=> menuPage()));
 
-          }, child: Text('iniciar sesion')  )
+          }, child: Text('Login')  )
         ],
       )
 
